@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Pioneer Store. Tecnología diseñada para el futuro.">
-    <meta name="theme-color" content="#090b12">
+    <meta name="description" content="Pioneer está preparando Aven One, su primer PC. Conoce el proyecto y escríbenos si quieres saber más.">
+    <meta name="theme-color" content="#f8f6f1">
 
-    <title>Pioneer Store | Tecnología</title>
+    <title>Pioneer | Aven One está en camino</title>
     <link rel="icon" type="image/png" href="Pioneer.favicon.colours.png">
 
     <style>
@@ -19,21 +19,25 @@
 }
 
 :root {
-    --background: #ffffff;
-    --surface: #f5f5f7;
-    --dark: #171717;
-    --text: #202020;
-    --muted: #777777;
-    --border: #e8e8e8;
-    --accent: #8276c9;
-    --accent-hover: #7164b7;
+    --background: #f8f6f1;
+    --surface: #efede6;
+    --dark: #242321;
+    --text: #302e2a;
+    --muted: #716d65;
+    --border: #dedbd2;
+    --accent: #68518f;
+    --accent-hover: #534071;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     background: var(--background);
     color: var(--text);
     line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 a {
@@ -46,13 +50,19 @@ button {
     cursor: pointer;
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
 
 .header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(248, 246, 241, 0.95);
     backdrop-filter: blur(16px);
 }
 
@@ -62,7 +72,7 @@ button {
     color: #ffffff;
     text-align: center;
     font-size: 12px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.15px;
 }
 
 .navbar {
@@ -76,8 +86,8 @@ button {
 
 .logo {
     font-size: 23px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
     color: var(--dark);
 }
 
@@ -111,7 +121,7 @@ button {
 
 
 .hero {
-    min-height: 580px;
+    min-height: 560px;
     padding: 90px 12%;
     display: flex;
     align-items: center;
@@ -128,16 +138,17 @@ button {
     color: var(--accent);
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 2.5px;
+    letter-spacing: 1.6px;
 }
 
 .hero h1 {
     margin: 24px 0;
     color: var(--dark);
     font-size: clamp(42px, 5.5vw, 66px);
-    font-weight: 600;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
     line-height: 1.12;
-    letter-spacing: -2.5px;
+    letter-spacing: -1.8px;
 }
 
 .hero h1 span {
@@ -148,7 +159,7 @@ button {
     max-width: 420px;
     margin-bottom: 30px;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .primary-button,
@@ -156,7 +167,7 @@ button {
     display: inline-block;
     padding: 13px 24px;
     border: 1px solid var(--dark);
-    border-radius: 5px;
+    border-radius: 3px;
     background: var(--dark);
     color: white;
     font-size: 13px;
@@ -166,21 +177,41 @@ button {
 
 .primary-button:hover,
 .contact-button:hover {
-    background: #383838;
+    background: var(--accent-hover);
     transform: translateY(-2px);
 }
 
 .hero-decoration {
+    width: min(100%, 350px);
+    min-height: 350px;
+    padding: 34px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #d5d0c4;
+    background: #e8e4da;
+    box-shadow: 12px 12px 0 rgba(36, 35, 33, 0.08);
 }
 
-.hero-decoration img {
-    width: 290px;
-    max-width: 100%;
-    object-fit: contain;
-    animation: floating 5s ease-in-out infinite;
+.hero-decoration span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.hero-decoration strong {
+    color: var(--dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(58px, 8vw, 86px);
+    font-weight: 500;
+    letter-spacing: -5px;
+    line-height: 0.9;
+}
+
+.hero-decoration strong span {
+    color: var(--accent);
+    font: inherit;
 }
 
 
@@ -197,8 +228,9 @@ button {
     margin: 15px 0 8px;
     color: var(--dark);
     font-size: 42px;
-    font-weight: 600;
-    letter-spacing: -1.5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: -1px;
 }
 
 .section-heading p {
@@ -214,13 +246,13 @@ button {
     align-items: center;
     gap: 65px;
     border: 1px solid var(--border);
-    border-radius: 10px;
-    background: #ffffff;
+    border-radius: 3px;
+    background: var(--background);
     transition: border-color 0.25s;
 }
 
 .product-card:hover {
-    border-color: #c9c1ed;
+    border-color: #b7abc9;
 }
 
 .product-image,
@@ -233,24 +265,46 @@ button {
     text-align: center;
 }
 
-.product-image img {
-    width: 260px;
-    max-width: 100%;
-    object-fit: contain;
+.product-mark {
+    min-height: 260px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: var(--surface);
+    text-align: left;
+}
+
+.product-mark span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.product-mark strong {
+    color: var(--dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 6vw, 68px);
+    font-weight: 500;
+    letter-spacing: -3px;
+    line-height: 0.95;
 }
 
 .product-category {
     color: var(--accent);
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .product-info h3 {
     margin: 12px 0;
     color: var(--dark);
     font-size: 40px;
-    font-weight: 600;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
     letter-spacing: -1px;
 }
 
@@ -271,8 +325,8 @@ button {
     width: 100%;
     padding: 14px;
     border: none;
-    border-radius: 5px;
-    background: var(--dark);
+    border-radius: 3px;
+    background: var(--accent);
     color: #ffffff;
     font-size: 12px;
     font-weight: 700;
@@ -281,12 +335,14 @@ button {
 }
 
 .buy-button:hover {
-    background: var(--accent);
+    background: var(--accent-hover);
 }
 
 .buy-button:disabled {
     cursor: not-allowed;
-    opacity: 0.6;
+    background: #e7e3eb;
+    color: #625a6c;
+    opacity: 1;
 }
 
 
@@ -300,8 +356,9 @@ button {
 .about h2 {
     margin: 22px 0;
     font-size: clamp(32px, 5vw, 48px);
-    font-weight: 500;
-    letter-spacing: -1.5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -0.8px;
 }
 
 .about h2 span {
@@ -326,7 +383,8 @@ button {
     margin-bottom: 12px;
     color: var(--dark);
     font-size: 38px;
-    font-weight: 600;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
 }
 
 .contact p {
@@ -343,7 +401,7 @@ button {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background: #ffffff;
+    background: var(--background);
     border-top: 1px solid var(--border);
 }
 
@@ -351,17 +409,6 @@ button {
 .footer a:last-child {
     color: var(--muted);
     font-size: 12px;
-}
-
-
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
 }
 
 
@@ -384,7 +431,7 @@ button {
         padding: 25px;
         flex-direction: column;
         gap: 22px;
-        background: #ffffff;
+        background: var(--background);
         border-bottom: 1px solid var(--border);
     }
 
@@ -404,8 +451,9 @@ button {
         margin-left: auto;
     }
 
-    .hero-decoration img {
-        width: 210px;
+    .hero-decoration {
+        width: min(100%, 320px);
+        min-height: 300px;
     }
 
     .products {
@@ -422,8 +470,8 @@ button {
         gap: 35px;
     }
 
-    .product-image img {
-        width: 210px;
+    .product-image {
+        width: 100%;
     }
 
     .product-info {
@@ -445,13 +493,11 @@ button {
     }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
         scroll-behavior: auto !important;
-        animation: none !important;
         transition: none !important;
     }
 }
@@ -463,13 +509,13 @@ button {
 
     <header class="header">
         <div class="shipping">
-            🚚 Envíos SOLO por linea 4 chile
+            Entregas coordinadas en la Línea 4 · Chile
         </div>
 
         <nav class="navbar">
             <a href="#inicio" class="logo">PIONEER<span>.</span></a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
                 ☰
             </button>
 
@@ -486,58 +532,66 @@ button {
 
         <section class="hero" id="inicio">
             <div class="hero-content">
-                <span class="tag">TECNOLOGÍA PIONEER</span>
+                <span class="tag">HOLA, SOMOS PIONEER</span>
 
                 <h1>
-                    El futuro comienza
-                    <span>con una idea.</span>
+                    Fácil de usar.
+                    <span>Imposible de confundir.</span>
                 </h1>
 
                 <p>
-                    Descubre una nueva forma de experimentar la tecnología.
-                    Productos diseñados para acompañarte cada día.
+                    Aven One es nuestro primer PC de escritorio: una carcasa
+                    compacta y BlueBallOS, con una interfaz sencilla y una
+                    estética Frutiger Aero llena de color.
                 </p>
 
                 <a href="#productos" class="primary-button">
-                    Explorar productos →
+                    Conocer Aven One →
                 </a>
             </div>
 
-            <div class="hero-decoration">
-                <img src="AvenOne.icon.png" alt="Aven One">
+            <div class="hero-decoration" aria-hidden="true">
+                <span>PROYECTO Nº 01</span>
+                <strong>AVEN<br><span>ONE</span></strong>
+                <span>PRIMER LANZAMIENTO · PIONEER</span>
             </div>
         </section>
 
         <section class="products" id="productos">
 
             <div class="section-heading">
-                <span class="tag">NUESTRA TECNOLOGÍA</span>
-                <h2>Diseñado para ti.</h2>
-                <p>Conoce nuestra primera generación de productos.</p>
+                <span class="tag">EN QUÉ ESTAMOS</span>
+                <h2>Nuestro primer equipo.</h2>
+                <p>Aven One está en camino. Pronto tendremos más que contarte.</p>
             </div>
 
             <article class="product-card">
 
                 <div class="product-image">
-                    <img src="AvenOne.icon.png" alt="Aven One">
+                    <div class="product-mark" aria-hidden="true">
+                        <span>PIONEER · PC 01</span>
+                        <strong>AVEN<br>ONE</strong>
+                    </div>
                 </div>
 
                 <div class="product-info">
-                    <span class="product-category">COMPUTACIÓN</span>
+                    <span class="product-category">PRIMER PROYECTO</span>
 
                     <h3>Aven One</h3>
 
                     <p>
-                        Un PC ligero. Diseñado para el día a día,
-                        con una experiencia sencilla y funcional.
+                        Su carcasa compacta integra ranuras de ventilación en
+                        un diseño limpio. En pantalla, BlueBallOS mezcla una
+                        experiencia fácil de usar con cielos azules, verdes
+                        vivos e iconos 3D al estilo Frutiger Aero.
                     </p>
 
                     <span class="availability">
-                        ● Próximamente
+                        Aún no está disponible
                     </span>
 
-                    <button class="buy-button" id="buyButton">
-                        COMPRAR →
+                    <button class="buy-button" id="buyButton" disabled>
+                        PRÓXIMAMENTE
                     </button>
                 </div>
 
@@ -546,23 +600,22 @@ button {
         </section>
 
         <section class="about" id="nosotros">
-            <span class="tag">SOBRE PIONEER</span>
+            <span class="tag">POR QUÉ EMPEZAMOS</span>
 
-            <h2>La tecnología debe ser <span>para todos.</span></h2>
+            <h2>La tecnología debería <span>ser más sencilla.</span></h2>
 
             <p>
-                En Pioneer buscamos crear productos tecnológicos
-                accesibles, funcionales y pensados para las personas.
+                Pioneer nace con una idea simple: hacer tecnología útil,
+                fácil de entender y pensada para la vida de todos los días.
             </p>
         </section>
 
-        <!-- CONTACTO -->
         <section class="contact" id="contacto">
-            <h2>¿Hablamos?</h2>
+            <h2>¿Te dio curiosidad?</h2>
 
             <p>
-                ¿Tienes alguna pregunta sobre nuestros productos?
-                Nos encantaría ayudarte. (correo personal del fundador XD)
+                Si quieres saber cuándo sale Aven One o simplemente conversar,
+                escríbenos. Este correo lo revisa el fundador (sí, en persona).
             </p>
 
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mrpaltamovie@gmail.com&su=Consulta%20Pioneer"
@@ -586,10 +639,11 @@ const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    const isOpen = navLinks.classList.toggle("active");
 
-    menuToggle.textContent =
-        navLinks.classList.contains("active") ? "✕" : "☰";
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
 });
 
 
@@ -597,20 +651,13 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
         navLinks.classList.remove("active");
         menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
     });
 });
 
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-const buyButton = document.getElementById("buyButton");
-
-buyButton.addEventListener("click", () => {
-    buyButton.textContent = "PRÓXIMAMENTE";
-    buyButton.disabled = true;
-});
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
